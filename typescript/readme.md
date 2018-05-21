@@ -9,3 +9,4 @@
 - [type关键字](./type-keyword.md)
 - [元组](./tuple.md)
 - [枚举](./enum.md)
+- [类](./decorator.md)

@@ -38,3 +38,38 @@ var Days;
     Days[Days["Sat"] = 6] = "Sat";
 })(Days || (Days = {}));
 ```
+
+## 手动赋值
+我们也可以给枚举项手动赋值：
+
+```ts
+enum Days {Sun = 7, Mon = 1, Tue, Wed, Thu, Fri, Sat};
+
+console.log(Days["Sun"] === 7); // true
+console.log(Days["Mon"] === 1); // true
+console.log(Days["Tue"] === 2); // true
+console.log(Days["Sat"] === 6); // true
+```
+
+## 常数枚举
+常数枚举是使用 `const enum` 定义的枚举类型：
+
+```ts
+const enum Directions {
+    Up,
+    Down,
+    Left,
+    Right
+}
+
+let directions = [Directions.Up, Directions.Down, Directions.Left, Directions.Right];
+```
+
+常数枚举与普通枚举的区别是，它会在编译阶段被删除，并且不能包含计算成员。
+
+上例的编译结果是：
+
+```ts
+var directions = [0 /* Up */, 1 /* Down */, 2 /* Left */, 3 /* Right */];
+```
+
