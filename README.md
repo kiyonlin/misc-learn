@@ -1,0 +1,2 @@
+- typescript
+    - [对象的类型——接口](./typescript/interface.md)
