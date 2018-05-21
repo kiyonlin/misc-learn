@@ -1,2 +1,3 @@
-- typescript
-    - [对象的类型——接口](./typescript/interface.md)
+# 新的知识点
+
+- [typescript](./typescript/readme.md)
