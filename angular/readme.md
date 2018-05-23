@@ -4,3 +4,4 @@
 
 - [模块](./module.md)
 - [组件](./component.md)
+- [服务](./service.md)
