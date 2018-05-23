@@ -3,3 +3,4 @@
 新的知识
 
 - [模块](./module.md)
+- [组件](./component.md)
