@@ -7,3 +7,4 @@
 - [服务](./service.md)
 - [测试](./test.md)
 - [生命周期钩子](./lifecycle-hook.md)
+- [组件交互](./component-interaction.md)

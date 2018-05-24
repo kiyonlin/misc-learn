@@ -4,7 +4,7 @@
 
 | 钩子 |用途以及时机|
 |-----|----------|
-|ngOnChanges()|当 Angular（重新）设置数据绑定输入属性时响应。 该方法接受当前和上一属性值的 SimpleChanges 对象当被绑定的输入属性的值发生变化时调用，首次调用一定会发生在 ngOnInit() 之前。|
+|ngOnChanges()|当 Angular（重新）设置数据绑定输入属性时响应。 该方法接受当前和上一属性值的 SimpleChanges 对象当被绑定的输入属性的值(对象是引用调用，对象里面的值发生变化时，不会监测到)发生变化时调用，首次调用一定会发生在 ngOnInit() 之前。|
 |ngOnInit()|在 Angular 第一次显示数据绑定和设置指令/组件的输入属性之后，初始化指令/组件。在第一轮 ngOnChanges() 完成之后调用，只调用一次。|
 |ngDoCheck()|检测，并在发生 Angular 无法或不愿意自己检测的变化时作出反应。在每个 Angular 变更检测周期中调用，ngOnChanges() 和 ngOnInit() 之后。|
 |ngAfterContentInit()|当把内容投影进组件之后调用。第一次 ngDoCheck() 之后调用，只调用一次。|
