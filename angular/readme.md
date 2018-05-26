@@ -8,3 +8,5 @@
 - [测试](./test.md)
 - [生命周期钩子](./lifecycle-hook.md)
 - [组件交互](./component-interaction.md)
+- [Observable](./observable-rxjs/observable.md)
+- [RXJS](./observable-rxjs/rxjs.md)
