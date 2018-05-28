@@ -29,3 +29,48 @@ component
 |路由模块|为其它模块提供路由配置|无|是（守卫）|RouterModule|功能模块（供路由使用）|
 |服务模块|提供了一些工具服务，完全由服务提供商组成（[HttpClientModule](https://angular.cn/api/common/http/HttpClientModule)）|无|有|无|AppModule|
 |组件模块|为外部模块提供组件、指令和管道|有|罕见|有|功能模块|
+
+## 入口组件
+从分类上说，入口组件是 `Angular` 命令式加载的任意组件（也就是说没有在模板中引用过它）， 可以在 `NgModule` 中引导它，或把它包含在路由定义中来指定入口组件。
+
+入口组件有两种主要的类型：
+
+- 引导用的根组件。
+- 在路由定义中指定的组件。
+
+```ts
+const routes: Routes = [
+  {
+    path: '',
+    component: CustomerListComponent
+  }
+];
+```
+
+所有路由组件都必须是入口组件。这需要把同一个组件添加到两个地方（路由中和 `entryComponents` 中），但编译器足够聪明，可以识别出这里是一个路由定义，因此它会自动把这些路由组件添加到 `entryComponents` 中。
+
+## NgModule API
+
+### @NgModule 的设计意图
+宏观来讲，`NgModule` 是组织 `Angular` 应用的一种方式，它们通过 `@NgModule` 装饰器中的元数据来实现这一点。 这些元数据可以分成三类：
+
+- 静态的：编译器配置，用于告诉编译器指令的选择器并通过选择器匹配的方式决定要把该指令应用到模板中的什么位置。它是通过 `declarations` 数组来配置的。
+- 运行时：通过 `providers` 数组提供给注入器的配置。
+- 组合/分组：通过 `imports` 和 `exports` 数组来把多个 `NgModule` 放在一起，并彼此可用。
+
+```ts
+@NgModule({
+  // Static, that is compiler configuration
+  declarations: [], // Configure the selectors
+  entryComponents: [], // Generate the host factory
+
+  // Runtime, or injector configuration
+  providers: [], // Runtime injector configuration
+
+  // Composability / Grouping
+  imports: [], // composing NgModules together
+  exports: [] // making NgModules available to other parts of the app
+})
+```
+
+### [@NgModule 元数据](https://angular.cn/guide/ngmodule-api#codengmodulecode-metadata)
