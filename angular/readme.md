@@ -1,4 +1,4 @@
-教程来自《[Angular中文官网](https://angular.cn/docs)》
+教程来自《[Angular 中文官网](https://angular.cn/docs)》
 
 新的知识
 
@@ -11,5 +11,6 @@
 - [Observable](./observable-rxjs/observable.md)
 - [RXJS](./observable-rxjs/rxjs.md)
 - [依赖注入](./dependency-injection.md)
-- [CDK简介](./cdk.md)
+- [CDK 简介](./cdk.md)
 - [风格指南](./style-guide.md)
+- [angular in action](.angular-in-action/angular-in-action.md)
